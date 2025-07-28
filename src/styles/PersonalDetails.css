@@ -1,0 +1,38 @@
+.container{
+    margin: -400px 100px;
+}
+.form-pd{
+    background-color:white ;
+    color: black;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    padding: 3px 20px;
+    padding-bottom: 15px;
+    border-radius: 18px;
+}
+
+.form-pd h1{
+    font-family: 'PPMori', sans-serif;
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+.form-pd .label-pd{
+    font-family: 'PPMori', sans-serif;
+    font-size: 15px;
+    margin-top:5px;
+    margin-bottom: 5px;
+}
+
+.form-pd .input-pd{
+    font-family: 'PPMori', sans-serif;
+    font-size: 10px;
+    display: flex;
+    color: black;
+    flex-direction: column;
+    margin-bottom: 10px;
+    background-color:#F3F4F6;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+}
