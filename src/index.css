@@ -1,3 +1,4 @@
+/* ============ Your Root Styles ============= */
 :root {
   font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -13,6 +14,7 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* ============ Link Styles ============= */
 a {
   font-weight: 500;
   color: #646cff;
@@ -22,6 +24,7 @@ a:hover {
   color: #535bf2;
 }
 
+/* ============ Body Styles ============= */
 body {
   margin: 0;
   display: flex;
@@ -30,11 +33,13 @@ body {
   min-height: 100vh;
 }
 
+/* ============ Heading Styles ============= */
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
+/* ============ Button Styles ============= */
 button {
   border-radius: 8px;
   border: 1px solid transparent;
@@ -54,6 +59,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
+/* ========= Light Mode Overrides ========= */
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
@@ -65,4 +71,86 @@ button:focus-visible {
   button {
     background-color: #f9f9f9;
   }
+}
+
+/* ======== Custom Fonts @font-face ======== */
+
+/* PPMori - ExtraLight & Italic */
+@font-face {
+  font-family: "PPMori";
+  src: url("./assets/fonts/PPMori-ExtraLight.otf");
+  font-weight: 200;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PPMori";
+  src: url("./assets/fonts/PPMori-ExtraLightItalic.otf");
+  font-weight: 200;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* PPMori - Regular & Italic */
+@font-face {
+  font-family: "PPMori";
+  src: url("./assets/fonts/PPMori-Regular.otf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PPMori";
+  src: url("./assets/fonts/PPMori-RegularItalic.otf");
+  font-weight: 400;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* PPMori - SemiBold & Italic */
+@font-face {
+  font-family: "PPMori";
+  src: url("./assets/fonts/PPMori-SemiBold.otf");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PPMori";
+  src: url("./assets/fonts/PPMori-SemiBoldItalic.otf");
+  font-weight: 600;
+  font-style: italic;
+  font-display: swap;
+}
+
+/* PPNeueMontreal - Book & Bold */
+@font-face {
+  font-family: "PPNeueMontreal";
+  src: url("./assets/fonts/PPNeueMontreal-Book.otf");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "PPNeueMontreal";
+  src: url("./assets/fonts/PPNeueMontreal-Bold.otf");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Geist Variable Fonts (if using .woff files) */
+@font-face {
+  font-family: "GeistMonoVF";
+  src: url("./assets/fonts/GeistMonoVF.woff");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: "GeistVF";
+  src: url("./assets/fonts/GeistVF.woff");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
 }
