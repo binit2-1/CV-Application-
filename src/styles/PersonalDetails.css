@@ -12,23 +12,26 @@
     padding: 3px 20px;
     padding-bottom: 15px;
     border-radius: 18px;
+    margin-top: 50px;
 }
 
 .form-pd h1{
     font-family: 'PPMori', sans-serif;
     font-size: 30px;
+    font-weight: 700;
     margin-bottom: 10px;
 }
 .form-pd .label-pd{
     font-family: 'PPMori', sans-serif;
     font-size: 15px;
+    font-weight: 600;
     margin-top:5px;
     margin-bottom: 5px;
 }
 
 .form-pd .input-pd{
     font-family: 'PPMori', sans-serif;
-    font-size: 10px;
+    font-size: 15px;
     display: flex;
     color: black;
     flex-direction: column;

@@ -1,4 +1,5 @@
 import React from 'react'
+import '../../styles/CollapseBox.css';
 
 const CollapseBox = ({ title, content }) => {
   return (
