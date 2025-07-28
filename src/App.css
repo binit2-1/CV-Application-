@@ -16,17 +16,7 @@
     height: 100vh;
 }
 
-form{
-    background-color: white;
-    color: black;
-    width: auto;
-    display: flex;
-    flex-direction: column;
-    padding: 3px 20px;
-    padding-bottom: 15px;
-    border-radius: 18px;
-    margin-top: 50px;
-}
+
 
 form .label-pd{
     font-family: 'PPMori', sans-serif;
