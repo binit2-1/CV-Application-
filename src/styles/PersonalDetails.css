@@ -1,5 +1,7 @@
-.container{
-    margin: -400px 100px;
+.container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .form-pd{
     background-color:white ;
