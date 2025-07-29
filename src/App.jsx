@@ -5,7 +5,7 @@ import './App.css'
 
 const App = () => {
   return (
-    <div>
+    <div className='parent'>
       <ul className='div1'>
         <li className='PersonalDetails'>
           <CollapseBox
@@ -165,6 +165,8 @@ const App = () => {
           />
         </li>
       </ul>
+      <div className='div2'>
+      </div>
     </div>
   );
 }
