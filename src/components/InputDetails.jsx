@@ -1,18 +1,17 @@
 import React from 'react'
+import '../styles/InputDetails.css'
 
-const InputDetails = (
-    labelName,
+const InputDetails = ({
     labelText,
     type,
-    placeholder,
-    inputName
-) => {
+    placeholder
+}) => {
   return (
-    <form>
-      <label className={labelName}>{labelText}</label>
+    <form className='form-pd'>
+      <label className='label-pd'>{labelText}</label>
       <input
         type={type}
-        className={inputName}
+        className='input-pd'
         placeholder={placeholder}
       />
     </form>

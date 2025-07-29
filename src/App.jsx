@@ -1,25 +1,63 @@
 import React from 'react';
 import CollapseBox from './components/CollapseBox.jsx';
+import InputDetails from './components/InputDetails.jsx';
 import './App.css'
 
 const App = () => {
   return (
-     <div className="parent">
-      <div className="div1"> 
-      
-        <CollapseBox title={<h1>Education</h1>} 
-        content = {<form>
-          <label className='label-pd'>Institution</label>
-          <input type="text" placeholder='e.g. XYZ International' className='input-pd' />
-          <label className='label-pd'>Degree</label>
-          <input type="text" placeholder='e.g. Bachelor of Science' className='input-pd' />
-          <label className='label-pd'>Year of Graduation</label>
-          <input type="text" placeholder='e.g. 2020' className='input-pd' />
-        </form>} 
+     <ul>
+      <li className='div1'>
+        <CollapseBox
+          title="Personal Information"
+          content={
+            <>
+              <InputDetails
+                labelName='label-pd'
+                labelText='Full Name'
+                type='text'
+                placeholder='e.g. John Doe'
+                inputName='input-pd'
+              />
+              <InputDetails
+                labelName='label-pd'
+                labelText='Email'
+                type='email'
+                placeholder='e.g. john.doe@example.com'
+                inputName='input-pd'
+              />
+              <InputDetails
+                labelName='label-pd'
+                labelText='Phone Number'
+                type='tel'
+                placeholder='e.g. +1234567890'
+                inputName='input-pd'
+              />
+              <InputDetails
+                labelName='label-pd'
+                labelText='Address'
+                type='text'
+                placeholder='e.g. 123 Main St, City, Country'
+                inputName='input-pd'
+              />
+              <InputDetails
+                labelName='label-pd'
+                labelText='LinkedIn'
+                type='url'
+                placeholder='e.g. https://www.linkedin.com/in/yourprofile'
+                inputName='input-pd'
+              />
+              <InputDetails
+                labelName='label-pd'
+                labelText='GitHub'
+                type='url'
+                placeholder='e.g. https://www.github.com/yourprofile'
+                inputName='input-pd'
+              />
+            </>
+          }
         />
-      </div>
-      <div className="div2"> </div>
-   </div>
+      </li>
+     </ul>
   );
 }
 

@@ -16,29 +16,6 @@
     height: 100vh;
 }
 
-
-
-form .label-pd{
-    font-family: 'PPMori', sans-serif;
-    font-size: 15px;
-    font-weight: 600;
-    margin-top:5px;
-    margin-bottom: 5px;
-}
-
-form .input-pd{
-    font-family: 'PPMori', sans-serif;
-    font-size: 15px;
-    display: flex;
-    color: black;
-    flex-direction: column;
-    margin-bottom: 10px;
-    background-color:#F3F4F6;
-    border: none;
-    border-radius: 5px;
-    padding: 10px;
-}
-
 .div2 {
     grid-area: 1 / 2 / 3 / 3;
 }

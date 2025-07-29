@@ -15,7 +15,8 @@ const CollapseBox = ({ title, content = "Test-Text"}) => {
   return (
     <div className="collapse-box">
       <div className="collapse-header">
-        <h1>{title} <ChevronDownIcon className={`chevron-icon ${isOpen ? 'open' : ''}`} onClick={toggleCollapse} /></h1> 
+        <h1>{title}</h1>
+        <ChevronDownIcon className={`chevron-icon ${isOpen ? 'open' : ''}`} onClick={toggleCollapse} /> 
       </div>
       <div className="collapse-content">
         {isOpen && content}
