@@ -1,5 +1,5 @@
 import React from 'react'
-import '../../styles/CollapseBox.css';
+import '../styles/CollapseBox.css';
 import { ChevronDownIcon } from '@heroicons/react/16/solid';
 import { useState } from 'react';
 
@@ -15,8 +15,7 @@ const CollapseBox = ({ title, content = "Test-Text"}) => {
   return (
     <div className="collapse-box">
       <div className="collapse-header">
-        <h1>{title}</h1>
-        <ChevronDownIcon className={`chevron-icon ${isOpen ? 'open' : ''}`} onClick={toggleCollapse} />
+        <h1>{title} <ChevronDownIcon className={`chevron-icon ${isOpen ? 'open' : ''}`} onClick={toggleCollapse} /></h1> 
       </div>
       <div className="collapse-content">
         {isOpen && content}
