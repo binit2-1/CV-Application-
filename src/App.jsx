@@ -2,6 +2,7 @@ import React from 'react';
 import CollapseBox from './components/CollapseBox.jsx';
 import InputDetails from './components/InputDetails.jsx';
 import './App.css'
+import ResumeCard from './components/ResumeCard.jsx';
 
 const App = () => {
   return (
@@ -166,6 +167,7 @@ const App = () => {
         </li>
       </ul>
       <div className='div2'>
+        <ResumeCard />
       </div>
     </div>
   );

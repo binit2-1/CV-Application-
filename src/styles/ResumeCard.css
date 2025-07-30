@@ -1,0 +1,8 @@
+.resume-card{
+    background-color: white;
+    height: 1080px;
+    width: 700px;
+    margin-bottom: 50px;
+    margin-top: 50px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
