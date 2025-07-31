@@ -11,6 +11,55 @@
 }
 
 .solid{
-    border: 1px solid black;
+    border: 0.5px solid black;
     width: 650px;
+}
+
+
+.name{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    padding-left: 20px;
+    margin-bottom: 0px;
+}
+.letter-span{
+    font-size: 24px;
+    font-weight: 200;
+}
+.section-headings{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight:300;
+    padding-left: 24px;
+    margin-bottom: -5px;
+}
+
+.header-details{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);    
+}
+
+.header-details p {
+    margin: 0 !important;
+    
+    font-size: 15px;
+}
+
+.header-span{
+    font-weight: 600;
+    font-size: 16px;
+}
+
+p{
+    font-family: 'Times New Roman', Times, serif;
+    padding-left: 24px;
+    margin:5px;
+}
+
+.right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-right: 24px;
 }

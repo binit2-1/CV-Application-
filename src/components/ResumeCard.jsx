@@ -12,15 +12,21 @@ const ResumeCard = ({
     <div className='resume-card'>
         <div className='personal-info'>
             <h2 className='name'>{personalInfo.fullName}</h2>
-            <p className='email'>{personalInfo.email}</p>
-            <p className='phone'>{personalInfo.phoneNumber}</p>
-            <p className='address'>{personalInfo.address}</p>
-            <p className='linkedin'>{personalInfo.linkedin}</p>
-            <p className='github'>{personalInfo.github}</p>
+            <div className='header-details'>
+                <div className='left-column'>
+                        <p className='email'><span className='header-span'>Email:</span> {personalInfo.email}</p>
+                        <p className='phone'><span className='header-span'>Phone:</span> {personalInfo.phoneNumber}</p>
+                        <p className='address'><span className='header-span'>Address:</span> {personalInfo.address}</p>
+                </div>
+                <div className='right-column'>
+                    <p className='linkedin'><span className='header-span'>LinkedIn:</span> {personalInfo.linkedin}</p>
+                    <p className='github'><span className='header-span'>GitHub:</span> {personalInfo.github}</p>
+                </div>
+            </div>
         </div>
 
         <div className='education'>
-            <h1>Education</h1>
+            <h1 className='section-headings'><span className='letter-span'>E</span>DUCATION</h1>
             <hr className='solid'/>
             <p>{education.institution}</p>
             <p>{education.degree}</p>
@@ -28,14 +34,14 @@ const ResumeCard = ({
         </div>
 
         <div className='accomplishments'>
-            <h1>Accomplishments</h1>
+            <h1 className='section-headings'><span className='letter-span'>A</span>CCOMPLISHMENTS</h1>
             <hr className='solid'/>
             <p>{accomplishments.title}</p>
             <p>{accomplishments.description}</p>
         </div>
 
         <div className='projects'>
-            <h1>Projects</h1>
+            <h1 className='section-headings'><span className='letter-span'>P</span>ROJECTS</h1>
             <hr className='solid'/>
             <p>{projects.name}</p>
             <p>{projects.description}</p>
@@ -43,7 +49,7 @@ const ResumeCard = ({
         </div>
 
         <div className='skills'>
-            <h1>Skills</h1>
+            <h1 className='section-headings'><span>S</span>KILLS</h1>
             <hr className='solid'/>
             <p>{skills.category}</p>
             <p>{skills.name}</p>
