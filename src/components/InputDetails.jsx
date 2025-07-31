@@ -4,7 +4,9 @@ import '../styles/InputDetails.css'
 const InputDetails = ({
     labelText,
     type,
-    placeholder
+    placeholder,
+    value,
+    onChange
 }) => {
   return (
     <form className='form-pd'>
@@ -13,6 +15,8 @@ const InputDetails = ({
         type={type}
         className='input-pd'
         placeholder={placeholder}
+        value={value}
+        onChange={onChange}
       />
     </form>
   )

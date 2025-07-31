@@ -3,8 +3,38 @@ import CollapseBox from './components/CollapseBox.jsx';
 import InputDetails from './components/InputDetails.jsx';
 import './App.css'
 import ResumeCard from './components/ResumeCard.jsx';
+import { useState } from 'react';
 
 const App = () => {
+
+  const [personalInfo, setPersonalInfo] = useState({
+    fullName: '',
+    email: '',
+    phoneNumber: '',
+    address: '',
+    linkedin: '',
+    github: ''
+  });
+  
+  const [education, setEducation] = useState({
+    institution: '',
+    degree: '',
+    yearOfGraduation: ''
+  });
+  const [accomplishments, setAccomplishments] = useState({
+    title: '',
+    description: ''
+  });
+  const [projects, setProjects] = useState({
+    name: '',
+    description: '',
+    techStack: ''
+  });
+  const [skills, setSkills] = useState({
+    category: '',
+    name: ''
+  });
+
   return (
     <div className='parent'>
       <ul className='div1'>
@@ -167,7 +197,13 @@ const App = () => {
         </li>
       </ul>
       <div className='div2'>
-        <ResumeCard />
+        <ResumeCard
+          personalInfo={personalInfo}
+          education={education}
+          accomplishments={accomplishments}
+          projects={projects}
+          skills={skills}
+        />
       </div>
     </div>
   );
