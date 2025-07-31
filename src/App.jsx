@@ -8,31 +8,31 @@ import { useState } from 'react';
 const App = () => {
 
   const [personalInfo, setPersonalInfo] = useState({
-    fullName: '',
-    email: '',
-    phoneNumber: '',
-    address: '',
-    linkedin: '',
-    github: ''
+    fullName: 'John Doe',
+    email: 'john.doe@example.com',
+    phoneNumber: '+1 234 567 8901',
+    address: '123 Main St, City, Country',
+    linkedin: 'linkedin.com/in/johndoe',
+    github: 'github.com/johndoe'
   });
   
   const [education, setEducation] = useState({
-    institution: '',
-    degree: '',
-    yearOfGraduation: ''
+    institution: 'Example University',
+    degree: 'B.Sc. in Computer Science',
+    yearOfGraduation: '2024'
   });
   const [accomplishments, setAccomplishments] = useState({
-    title: '',
-    description: ''
+    title: 'Dean’s List',
+    description: 'Awarded for academic excellence in 2023.'
   });
   const [projects, setProjects] = useState({
-    name: '',
-    description: '',
-    techStack: ''
+    name: 'Portfolio Website',
+    description: 'A personal website to showcase my projects and skills.',
+    techStack: 'React, CSS, Vite'
   });
   const [skills, setSkills] = useState({
-    category: '',
-    name: ''
+    category: 'Programming Languages',
+    name: 'JavaScript, Python, C++'
   });
 
 

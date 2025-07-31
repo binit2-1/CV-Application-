@@ -17,15 +17,16 @@
     margin-bottom: 5px;
 }
 
-.form-pd .input-pd{
-    font-family: 'PPMori', sans-serif;
-    font-size: 15px;
-    display: flex;
-    color: black;
-    flex-direction: column;
-    margin-bottom: 10px;
-    background-color:#F3F4F6;
+.form-pd .input-pd {
+    color: black;            /* Text color */
+    text-align: left;        /* Text alignment: left, center, or right */
+    background-color: #F3F4F6;
     border: none;
     border-radius: 5px;
     padding: 10px;
+    font-size: 15px;
+    font-family: 'PPMori', sans-serif;
+    margin-bottom: 10px;
+    width: 100%;             /* Makes input take full width of parent */
+    box-sizing: border-box;  /* Ensures padding doesn't overflow */
 }
