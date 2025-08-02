@@ -19,7 +19,8 @@ const App = () => {
   const [education, setEducation] = useState({
     institution: 'Example University',
     degree: 'B.Sc. in Computer Science',
-    yearOfGraduation: '2024'
+    From: '2020',
+    yearOfGraduation: '2025'
   });
   const [accomplishments, setAccomplishments] = useState({
     title: 'Dean’s List',
@@ -128,9 +129,18 @@ const App = () => {
                 />
                 <InputDetails
                   labelName='label-pd'
-                  labelText='Year of Graduation'
+                  labelText='From'
                   type='text'
                   placeholder='e.g. 2020'
+                  inputName='input-pd'
+                  value={education.From}
+                  onChange={e => setEducation({ ...education, From: e.target.value })}
+                />
+                <InputDetails
+                  labelName='label-pd'
+                  labelText='Year of Graduation(or Expected)'
+                  type='text'
+                  placeholder='e.g. 2024'
                   inputName='input-pd'
                   value={education.yearOfGraduation}
                   onChange={e => setEducation({ ...education, yearOfGraduation: e.target.value })}

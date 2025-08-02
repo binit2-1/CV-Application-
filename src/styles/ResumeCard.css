@@ -65,3 +65,20 @@ p{
     align-items: flex-end;
     padding-right: 24px;
 }
+
+
+.education-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);   
+}
+
+.edu-left-column p{
+    margin-bottom: -7px;
+}
+.edu-right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-right: 24px;
+}

@@ -28,11 +28,16 @@ const ResumeCard = ({
         <div className='education'>
             <h1 className='section-headings'><span className='letter-span'>E</span>DUCATION</h1>
             <hr className='solid'/>
-            <p>{education.institution}</p>
-            <p>{education.degree}</p>
-            <p>{education.yearOfGraduation}</p>
+            <div className='education-details'>
+                <div className='edu-left-column'>
+                    <p>{education.institution}</p>
+                    <p>(<i>{education.degree}</i>)</p>
+                </div>
+                <div className='edu-right-column'>
+                    <p><i>{education.From}</i> to <i>{education.yearOfGraduation}</i></p>
+                </div>
+            </div>
         </div>
-
         <div className='accomplishments'>
             <h1 className='section-headings'><span className='letter-span'>A</span>CCOMPLISHMENTS</h1>
             <hr className='solid'/>
