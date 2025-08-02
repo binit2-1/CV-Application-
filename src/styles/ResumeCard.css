@@ -43,7 +43,6 @@
 
 .header-details p {
     margin: 0 !important;
-    
     font-size: 15px;
 }
 
@@ -75,6 +74,7 @@ p{
 .edu-left-column p{
     margin-bottom: -7px;
 }
+
 .edu-right-column {
     display: flex;
     flex-direction: column;
@@ -98,4 +98,30 @@ p{
     justify-content: flex-start;
     align-items: flex-end;
     padding-right: 24px;
+}
+
+.project-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);   
+}
+
+.proj-right-column a{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-right: 24px;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    font-style: italic;
+}
+
+.proj-description {
+    grid-column: 1 / -1;
+    padding-left: 24px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+.proj-left-column p{
+    margin-bottom: -7px;
 }

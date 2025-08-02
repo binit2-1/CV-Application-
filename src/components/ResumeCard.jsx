@@ -30,7 +30,7 @@ const ResumeCard = ({
             <hr className='solid'/>
             <div className='education-details'>
                 <div className='edu-left-column'>
-                    <p>{education.institution}</p>
+                    <p><b>{education.institution}</b></p>
                     <p>(<i>{education.degree}</i>)</p>
                 </div>
                 <div className='edu-right-column'>
@@ -55,11 +55,17 @@ const ResumeCard = ({
         <div className='projects'>
             <h1 className='section-headings'><span className='letter-span'>P</span>ROJECTS</h1>
             <hr className='solid'/>
-            <p>{projects.name}</p>
-            <p>{projects.description}</p>
-            <p>{projects.techStack}</p>
-            <a href='{projects.sourceCode}' target='_blank' rel='noopener noreferrer'>Source Code</a>
-            <a href='{projects.liveDemo}' target='_blank' rel='noopener noreferrer'>Live Demo</a>
+            <div className='project-details'>
+                <div className='proj-left-column'>
+                    <p><b>{projects.name}</b></p>
+                    <p>(<i><b>Tech Stack:</b></i> <i>{projects.techStack}</i>)</p>
+                </div>
+                <div className='proj-right-column'>
+                    <a href='{projects.sourceCode}' target='_blank' rel='noopener noreferrer'>Source Code</a>
+                    <a href='{projects.liveDemo}' target='_blank' rel='noopener noreferrer'>Live Demo</a>
+                </div>
+                <p className='proj-description'>{projects.description}</p>
+            </div>
         </div>
 
         <div className='skills'>
