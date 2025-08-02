@@ -58,6 +58,8 @@ const ResumeCard = ({
             <p>{projects.name}</p>
             <p>{projects.description}</p>
             <p>{projects.techStack}</p>
+            <a href='{projects.sourceCode}' target='_blank' rel='noopener noreferrer'>Source Code</a>
+            <a href='{projects.liveDemo}' target='_blank' rel='noopener noreferrer'>Live Demo</a>
         </div>
 
         <div className='skills'>

@@ -36,7 +36,9 @@ const App = () => {
   const [projects, setProjects] = useState({
     name: 'Portfolio Website',
     description: 'A personal website to showcase my projects and skills.',
-    techStack: 'React, CSS, Vite'
+    techStack: 'React, CSS, Vite',
+    sourceCode: 'https://github.com/yourusername/portfolio',
+    liveDemo: 'https://yourusername.github.io/portfolio/'
   });
 
   const [skills, setSkills] = useState({
@@ -231,6 +233,24 @@ const App = () => {
                   inputName='input-pd'
                   value={projects.techStack}
                   onChange={e => setProjects({ ...projects, techStack: e.target.value })}
+                />
+                <InputDetails
+                  labelName='label-pd'
+                  labelText='Source Code'
+                  type='url'
+                  placeholder='e.g. https://github.com/yourusername/yourproject'
+                  inputName='input-pd'
+                  value={projects.sourceCode}
+                  onChange={e => setProjects({ ...projects, sourceCode: e.target.value })}
+                />
+                <InputDetails
+                  labelName='label-pd'
+                  labelText='Live Demo'
+                  type='url'
+                  placeholder='e.g. https://yourusername.github.io/yourproject/'
+                  inputName='input-pd'
+                  value={projects.liveDemo}
+                  onChange={e => setProjects({ ...projects, liveDemo: e.target.value })}
                 />
               </>
             }
