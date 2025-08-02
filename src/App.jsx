@@ -1,12 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import CollapseBox from './components/CollapseBox.jsx';
 import InputDetails from './components/InputDetails.jsx';
-import './App.css'
+import './App.css';
 import ResumeCard from './components/ResumeCard.jsx';
-import { useState } from 'react';
 
 const App = () => {
-
   const [personalInfo, setPersonalInfo] = useState({
     fullName: 'John Doe',
     email: 'john.doe@example.com',
@@ -15,29 +13,36 @@ const App = () => {
     linkedin: 'linkedin.com/in/johndoe',
     github: 'github.com/johndoe'
   });
-  
+
   const [education, setEducation] = useState({
     institution: 'Example University',
     degree: 'B.Sc. in Computer Science',
     From: '2020',
     yearOfGraduation: '2025'
   });
-  const [accomplishments, setAccomplishments] = useState({
-    title: 'Dean’s List',
-    description: 'Awarded for academic excellence in 2023.'
+
+  const [experience, setExperience] = useState({
+    title: '',
+    company: '',
+    duration: ''
   });
+
+  const [accomplishments, setAccomplishments] = useState({
+    title: '',
+    description: ''
+  });
+
   const [projects, setProjects] = useState({
     name: 'Portfolio Website',
     description: 'A personal website to showcase my projects and skills.',
     techStack: 'React, CSS, Vite'
   });
+
   const [skills, setSkills] = useState({
     category: 'Programming Languages',
     name: 'JavaScript, Python, C++'
   });
 
-
-  
   return (
     <div className='parent'>
       <ul className='div1'>
@@ -98,7 +103,7 @@ const App = () => {
                   placeholder='e.g. https://www.github.com/yourprofile'
                   inputName='input-pd'
                   value={personalInfo.github}
-                  onChange={e => setPersonalInfo({ ...personalInfo, github: e.target.value })}  
+                  onChange={e => setPersonalInfo({ ...personalInfo, github: e.target.value })}
                 />
               </>
             }
@@ -149,26 +154,37 @@ const App = () => {
             }
           />
         </li>
-        <li className='Accomplishments'>
+        <li className='Experience'>
           <CollapseBox
-            title="Accomplishments"
+            title="Experience"
             content={
               <>
                 <InputDetails
                   labelName='label-pd'
-                  labelText='AAccomplishment Title'
+                  labelText='Job Title'
                   type='text'
-                  placeholder='e.g. Best Developer Award'
+                  placeholder='e.g. Software Engineer'
                   inputName='input-pd'
-                  value={accomplishments.title}
-                  onChange={e => setAccomplishments({ ...accomplishments, title: e.target.value })}
+                  value={experience.title}
+                  onChange={e => setExperience({ ...experience, title: e.target.value })}
                 />
                 <InputDetails
                   labelName='label-pd'
-                  labelText='Description'
+                  labelText='Company'
                   type='text'
-                  placeholder='e.g. Awarded for outstanding performance in software development.'
+                  placeholder='e.g. ABC Corp'
                   inputName='input-pd'
+                  value={experience.company}
+                  onChange={e => setExperience({ ...experience, company: e.target.value })}
+                />
+                <InputDetails
+                  labelName='label-pd'
+                  labelText='Duration'
+                  type='text'
+                  placeholder='e.g. Jan 2020 - Present'
+                  inputName='input-pd'
+                  value={experience.duration}
+                  onChange={e => setExperience({ ...experience, duration: e.target.value })}
                 />
               </>
             }
@@ -212,7 +228,7 @@ const App = () => {
         </li>
         <li className='Skills'>
           <CollapseBox
-            title ="Skills"
+            title="Skills"
             content={
               <>
                 <InputDetails
@@ -242,12 +258,12 @@ const App = () => {
         <ResumeCard
           personalInfo={personalInfo}
           education={education}
-          accomplishments={accomplishments}
+          experience={experience}
           projects={projects}
           skills={skills}
         />
       </div>
-    </div>
+    </div>    
   );
 }
 

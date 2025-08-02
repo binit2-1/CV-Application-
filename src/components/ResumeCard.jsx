@@ -4,7 +4,7 @@ import '../styles/ResumeCard.css';
 const ResumeCard = ({
     personalInfo = {},
     education = {},
-    accomplishments = {},
+    experience = {},
     projects = {},
     skills = {},
 }) => {
@@ -38,11 +38,12 @@ const ResumeCard = ({
                 </div>
             </div>
         </div>
-        <div className='accomplishments'>
-            <h1 className='section-headings'><span className='letter-span'>A</span>CCOMPLISHMENTS</h1>
+        <div className='experience'>
+            <h1 className='section-headings'><span className='letter-span'>E</span>XPERIENCE</h1>
             <hr className='solid'/>
-            <p>{accomplishments.title}</p>
-            <p>{accomplishments.description}</p>
+            <p>{experience.title}</p>
+            <p>{experience.company}</p>
+            <p>{experience.duration}</p>
         </div>
 
         <div className='projects'>
