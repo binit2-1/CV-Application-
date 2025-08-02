@@ -34,17 +34,22 @@ const ResumeCard = ({
                     <p>(<i>{education.degree}</i>)</p>
                 </div>
                 <div className='edu-right-column'>
-                    <p><i>{education.From}</i> to <i>{education.yearOfGraduation}</i></p>
+                    <p><i>{education.From}</i> - <i>{education.yearOfGraduation}</i></p>
                 </div>
             </div>
         </div>
         <div className='experience'>
             <h1 className='section-headings'><span className='letter-span'>E</span>XPERIENCE</h1>
             <hr className='solid'/>
-            <p>{experience.title}</p>
-            <p>{experience.company}</p>
-            <p>{experience.duration}</p>
-            <p>{experience.description}</p>
+            <div className='experience-details'>
+                <div className='exp-left-column'>
+                    <p><b>{experience.title}</b>, <i>{experience.company}</i></p>
+                </div>
+                <div className='exp-right-column'>
+                    <p><i>{experience.duration}</i></p>
+                </div>
+            </div>
+            <p className='exp-description'>{experience.description}</p>
         </div>
 
         <div className='projects'>

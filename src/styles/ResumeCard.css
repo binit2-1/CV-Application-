@@ -82,3 +82,20 @@ p{
     align-items: flex-end;
     padding-right: 24px;
 }
+
+.experience-details{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);   
+}
+
+.exp-description {
+    grid-column: 1 / -1;
+}
+
+.exp-right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-right: 24px;
+}
