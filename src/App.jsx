@@ -22,9 +22,10 @@ const App = () => {
   });
 
   const [experience, setExperience] = useState({
-    title: '',
-    company: '',
-    duration: ''
+    title: 'Software Engineer',
+    company: 'ABC Corp',
+    duration: 'Jan 2022 - Present',
+    description: 'Developed scalable web applications and led a team of 5 engineers.'
   });
 
   const [accomplishments, setAccomplishments] = useState({
@@ -185,6 +186,15 @@ const App = () => {
                   inputName='input-pd'
                   value={experience.duration}
                   onChange={e => setExperience({ ...experience, duration: e.target.value })}
+                />
+                <InputDetails
+                  labelName='label-pd'
+                  labelText='Description'
+                  type='text'
+                  placeholder='e.g. Developed scalable web applications and led a team of 5 engineers.'
+                  inputName='input-pd'
+                  value={experience.description}
+                  onChange={e => setExperience({ ...experience, description: e.target.value })}
                 />
               </>
             }

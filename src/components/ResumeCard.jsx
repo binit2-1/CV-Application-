@@ -44,6 +44,7 @@ const ResumeCard = ({
             <p>{experience.title}</p>
             <p>{experience.company}</p>
             <p>{experience.duration}</p>
+            <p>{experience.description}</p>
         </div>
 
         <div className='projects'>
