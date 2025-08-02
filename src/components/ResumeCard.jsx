@@ -63,8 +63,7 @@ const ResumeCard = ({
         <div className='skills'>
             <h1 className='section-headings'><span>S</span>KILLS</h1>
             <hr className='solid'/>
-            <p>{skills.category}</p>
-            <p>{skills.name}</p>
+            <p><b>{skills.category}</b>: <i>{skills.name}</i></p>
         </div>
     </div>
   )
