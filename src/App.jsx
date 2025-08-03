@@ -219,7 +219,7 @@ const App = () => {
               </ul>
               
                 <div className="add-btn-container">
-                  <AddButton buttonText="Experience" />
+                  <AddButton buttonText="Experience" onClick={() => setExperience([...experience, { title: '', company: '', duration: '', description: '' }])} />
                 </div>
               </>
             }
@@ -282,7 +282,7 @@ const App = () => {
                   ))}
                 </ul>
                 <div className="add-btn-container">
-                  <AddButton buttonText="Project" />
+                  <AddButton buttonText="Project" onClick={() => setProjects([...projects, { name: '', description: '', techStack: '', sourceCode: '', liveDemo: '' }])} />
                 </div>
               </>
             }
@@ -318,7 +318,7 @@ const App = () => {
                   ))}
                 </ul>
                 <div className="add-btn-container">
-                  <AddButton buttonText="Skills" />
+                  <AddButton buttonText="Skills" onClick={() => setSkills([...skills, { category: '', name: '' }])} />
                 </div>
               </>
             }

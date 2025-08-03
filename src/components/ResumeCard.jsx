@@ -30,49 +30,59 @@ const ResumeCard = ({
             <h1 className='section-headings'><span className='letter-span'>E</span>DUCATION</h1>
             <hr className='solid'/>
             <div className='education-details'>
-                <div className='edu-left-column'>
-                    <p><b>{education.institution}</b></p>
-                    <p>(<i>{education.degree}</i>)</p>
-                </div>
-                <div className='edu-right-column'>
-                    <p><i>{education.From}</i> - <i>{education.yearOfGraduation}</i></p>
-                </div>
+                {education.map((edu, idx) => (
+                    <div key={idx} className='education-item'>
+                        <div className='edu-left-column'>
+                            <p><b>{edu.institution}</b></p>
+                            <p>(<i>{edu.degree}</i>)</p>
+                        </div>
+                        <div className='edu-right-column'>
+                            <p><i>{edu.From}</i> - <i>{edu.yearOfGraduation}</i></p>
+                        </div>
+                    </div>
+                ))}
             </div>
         </div>
         <div className='experience'>
             <h1 className='section-headings'><span className='letter-span'>E</span>XPERIENCE</h1>
             <hr className='solid'/>
-            <div className='experience-details'>
+            {Array.isArray(experience) && experience.map((exp, idx) => (
+              <div className='experience-details' key={idx}>
                 <div className='exp-left-column'>
-                    <p><b>{experience.title}</b>, <i>{experience.company}</i></p>
+                  <p><b>{exp.title}</b>, <i>{exp.company}</i></p>
                 </div>
                 <div className='exp-right-column'>
-                    <p><i>{experience.duration}</i></p>
+                  <p><i>{exp.duration}</i></p>
                 </div>
-            </div>
-            <p className='exp-description'>{experience.description}</p>
+                <p className='exp-description'>{exp.description}</p>
+              </div>
+            ))}
         </div>
 
         <div className='projects'>
             <h1 className='section-headings'><span className='letter-span'>P</span>ROJECTS</h1>
             <hr className='solid'/>
-            <div className='project-details'>
+            {Array.isArray(projects) && projects.map((proj, idx) => (
+              <div className='project-details' key={idx}>
                 <div className='proj-left-column'>
-                    <p><b>{projects.name}</b></p>
-                    <p>(<i><b>Tech Stack:</b></i> <i>{projects.techStack}</i>)</p>
+                  <p><b>{proj.name}</b></p>
+                  <p>(<i><b>Tech Stack:</b></i> <i>{proj.techStack}</i>)</p>
                 </div>
                 <div className='proj-right-column'>
-                    <a href='{projects.sourceCode}' target='_blank' rel='noopener noreferrer'>Source Code</a>
-                    <a href='{projects.liveDemo}' target='_blank' rel='noopener noreferrer'>Live Demo</a>
+                  <a href={proj.sourceCode} target='_blank' rel='noopener noreferrer'>Source Code</a>
+                  <a href={proj.liveDemo} target='_blank' rel='noopener noreferrer'>Live Demo</a>
                 </div>
-                <p className='proj-description'>{projects.description}</p>
-            </div>
+                <p className='proj-description'>{proj.description}</p>
+              </div>
+            ))}
         </div>
 
         <div className='skills'>
             <h1 className='section-headings'><span>S</span>KILLS</h1>
             <hr className='solid'/>
-            <p><b>{skills.category}</b>: <i>{skills.name}</i></p>
+            {Array.isArray(skills) && skills.map((skill, idx) => (
+              <p key={idx}><b>{skill.category}</b>: <i>{skill.name}</i></p>
+            ))}
         </div>
     </div>
   )

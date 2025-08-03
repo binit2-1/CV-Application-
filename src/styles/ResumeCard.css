@@ -66,13 +66,40 @@ p{
 }
 
 
+
+
 .education-details {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);   
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 0.5em;
+}
+
+.experience-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 0.5em;
+}
+
+.project-details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    row-gap: 0.5em;
+}
+
+.education-item {
+    display: contents;
 }
 
 .edu-left-column p{
     margin-bottom: -7px;
+}
+
+.edu-right-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-end;
+    padding-right: 24px;
 }
 
 .edu-right-column {
