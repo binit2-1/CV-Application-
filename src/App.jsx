@@ -3,6 +3,7 @@ import CollapseBox from './components/CollapseBox.jsx';
 import InputDetails from './components/InputDetails.jsx';
 import './App.css';
 import ResumeCard from './components/ResumeCard.jsx';
+import AddButton from './components/AddButton.jsx';
 
 const App = () => {
   const [personalInfo, setPersonalInfo] = useState({
@@ -153,9 +154,13 @@ const App = () => {
                   value={education.yearOfGraduation}
                   onChange={e => setEducation({ ...education, yearOfGraduation: e.target.value })}
                 />
+                <div className="add-btn-container">
+                  <AddButton buttonText="Education" />
+                </div>
               </>
             }
           />
+          
         </li>
         <li className='Experience'>
           <CollapseBox
@@ -198,6 +203,9 @@ const App = () => {
                   value={experience.description}
                   onChange={e => setExperience({ ...experience, description: e.target.value })}
                 />
+                <div className="add-btn-container">
+                  <AddButton buttonText="Experience" />
+                </div>
               </>
             }
           />
@@ -252,6 +260,9 @@ const App = () => {
                   value={projects.liveDemo}
                   onChange={e => setProjects({ ...projects, liveDemo: e.target.value })}
                 />
+                <div className="add-btn-container">
+                  <AddButton buttonText="Project" />
+                </div>
               </>
             }
           />
@@ -279,6 +290,9 @@ const App = () => {
                   value={skills.name}
                   onChange={e => setSkills({ ...skills, name: e.target.value })}
                 />
+                <div className="add-btn-container">
+                  <AddButton buttonText="Skills" />
+                </div>
               </>
             }
           />

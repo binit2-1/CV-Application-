@@ -1,5 +1,6 @@
 import React from 'react'
 import '../styles/ResumeCard.css';
+import AddButton from './AddButton';
 
 const ResumeCard = ({
     personalInfo = {},
