@@ -15,37 +15,39 @@ const App = () => {
     github: 'github.com/johndoe'
   });
 
-  const [education, setEducation] = useState({
-    institution: 'Example University',
-    degree: 'B.Sc. in Computer Science',
-    From: '2020',
-    yearOfGraduation: '2025'
-  });
+  const [education, setEducation] = useState([
+    {
+      institution: 'Example University',
+      degree: 'B.Sc. in Computer Science',
+      From: '2020',
+      yearOfGraduation: '2025'
+    }
+  ]);
 
-  const [experience, setExperience] = useState({
-    title: 'Software Engineer',
-    company: 'ABC Corp',
-    duration: 'Jan 2022 - Present',
-    description: 'Developed scalable web applications and led a team of 5 engineers.'
-  });
+  const [experience, setExperience] = useState([
+    {
+      title: 'Software Engineer',
+      company: 'ABC Corp',
+      duration: 'Jan 2022 - Present',
+      description: 'Developed scalable web applications and led a team of 5 engineers.'
+    }
+  ]);
+  const [projects, setProjects] = useState([
+    {
+      name: 'Portfolio Website',
+      description: 'A personal website to showcase my projects and skills.',
+      techStack: 'React, CSS, Vite',
+      sourceCode: 'https://github.com/yourusername/portfolio',
+      liveDemo: 'https://yourusername.github.io/portfolio/'
+    }
+  ]);
 
-  const [accomplishments, setAccomplishments] = useState({
-    title: '',
-    description: ''
-  });
-
-  const [projects, setProjects] = useState({
-    name: 'Portfolio Website',
-    description: 'A personal website to showcase my projects and skills.',
-    techStack: 'React, CSS, Vite',
-    sourceCode: 'https://github.com/yourusername/portfolio',
-    liveDemo: 'https://yourusername.github.io/portfolio/'
-  });
-
-  const [skills, setSkills] = useState({
-    category: 'Programming Languages',
-    name: 'JavaScript, Python, C++'
-  });
+  const [skills, setSkills] = useState([
+    {
+      category: 'Programming Languages',
+      name: 'JavaScript, Python, C++'
+    }
+  ]);
 
   return (
     <div className='parent'>
@@ -118,91 +120,104 @@ const App = () => {
             title="Education"
             content={
               <>
-                <InputDetails
-                  labelName='label-pd'
-                  labelText='Institution'
-                  type='text'
-                  placeholder='e.g. University of Example'
-                  inputName='input-pd'
-                  value={education.institution}
-                  onChange={e => setEducation({ ...education, institution: e.target.value })}
-                />
-                <InputDetails
-                  labelName='label-pd'
-                  labelText='Degree'
-                  type='text'
-                  placeholder='e.g. Bachelor of Science'
-                  inputName='input-pd'
-                  value={education.degree}
-                  onChange={e => setEducation({ ...education, degree: e.target.value })}
-                />
-                <InputDetails
-                  labelName='label-pd'
-                  labelText='From'
-                  type='text'
-                  placeholder='e.g. 2020'
-                  inputName='input-pd'
-                  value={education.From}
-                  onChange={e => setEducation({ ...education, From: e.target.value })}
-                />
-                <InputDetails
-                  labelName='label-pd'
-                  labelText='Year of Graduation(or Expected)'
-                  type='text'
-                  placeholder='e.g. 2024'
-                  inputName='input-pd'
-                  value={education.yearOfGraduation}
-                  onChange={e => setEducation({ ...education, yearOfGraduation: e.target.value })}
-                />
-                <div className="add-btn-container">
-                  <AddButton buttonText="Education" />
-                </div>
+              <ul>
+                {education.map((edu, idx) => (
+                  <li key={idx}>
+                    <InputDetails
+                      labelName='label-pd'
+                      labelText='Institution'
+                      type='text'
+                      placeholder='e.g. University of Example'
+                      inputName='input-pd'
+                      value={edu.institution}
+                      onChange={e => setEducation(prev => prev.map((item, i) => i === idx ? { ...item, institution: e.target.value } : item))}
+                    />
+                    <InputDetails
+                      labelName='label-pd'
+                      labelText='Degree'
+                      type='text'
+                      placeholder='e.g. Bachelor of Science'
+                      inputName='input-pd'
+                      value={edu.degree}
+                      onChange={e => setEducation(prev => prev.map((item, i) => i === idx ? { ...item, degree: e.target.value } : item))}
+                    />
+                    <InputDetails
+                      labelName='label-pd'
+                      labelText='From'
+                      type='text'
+                      placeholder='e.g. 2020'
+                      inputName='input-pd'
+                      value={edu.From}
+                      onChange={e => setEducation(prev => prev.map((item, i) => i === idx ? { ...item, From: e.target.value } : item))}
+                    />
+                    <InputDetails
+                      labelName='label-pd'
+                      labelText='Year of Graduation(or Expected)'
+                      type='text'
+                      placeholder='e.g. 2024'
+                      inputName='input-pd'
+                      value={edu.yearOfGraduation}
+                      onChange={e => setEducation(prev => prev.map((item, i) => i === idx ? { ...item, yearOfGraduation: e.target.value } : item))}
+                    />
+                  </li>
+                ))}
+              </ul>
+              <div className="add-btn-container">
+                <AddButton buttonText="Education" onClick={() => setEducation([...education, { institution: '', degree: '', From: '', yearOfGraduation: '' }])} />
+              </div>
               </>
             }
           />
-          
         </li>
+      
         <li className='Experience'>
           <CollapseBox
             title="Experience"
             content={
               <>
-                <InputDetails
-                  labelName='label-pd'
-                  labelText='Job Title'
-                  type='text'
-                  placeholder='e.g. Software Engineer'
-                  inputName='input-pd'
-                  value={experience.title}
-                  onChange={e => setExperience({ ...experience, title: e.target.value })}
-                />
-                <InputDetails
-                  labelName='label-pd'
-                  labelText='Company'
-                  type='text'
-                  placeholder='e.g. ABC Corp'
-                  inputName='input-pd'
-                  value={experience.company}
-                  onChange={e => setExperience({ ...experience, company: e.target.value })}
-                />
-                <InputDetails
-                  labelName='label-pd'
-                  labelText='Duration'
-                  type='text'
-                  placeholder='e.g. Jan 2020 - Present'
-                  inputName='input-pd'
-                  value={experience.duration}
-                  onChange={e => setExperience({ ...experience, duration: e.target.value })}
-                />
-                <InputDetails
-                  labelName='label-pd'
-                  labelText='Description'
-                  type='text'
-                  placeholder='e.g. Developed scalable web applications and led a team of 5 engineers.'
-                  inputName='input-pd'
-                  value={experience.description}
-                  onChange={e => setExperience({ ...experience, description: e.target.value })}
-                />
+                <ul>
+                  {experience.map((exp, idx) => (
+                    <li key={idx}>
+                      <InputDetails
+                        labelName='label-pd'
+                        labelText='Job Title'
+                        type='text'
+                        placeholder='e.g. Software Engineer'
+                        inputName='input-pd'
+                        value={exp.title}
+                        onChange={e => setExperience(prev => prev.map((item, i) => i === idx ? { ...item, title: e.target.value } : item))}
+                      />
+                      <InputDetails
+                        labelName='label-pd'
+                        labelText='Company'
+                        type='text'
+                        placeholder='e.g. ABC Corp'
+                        inputName='input-pd'
+                        value={exp.company}
+                        onChange={e => setExperience(prev => prev.map((item, i) => i === idx ? { ...item, company: e.target.value } : item))}
+                      />
+                      <InputDetails
+                        labelName='label-pd'
+                        labelText='Duration'
+                        type='text'
+                        placeholder='e.g. Jan 2020 - Present'
+                        inputName='input-pd'
+                        value={exp.duration}
+                        onChange={e => setExperience(prev => prev.map((item, i) => i === idx ? { ...item, duration: e.target.value } : item))}
+                      />
+                      <InputDetails
+                        labelName='label-pd'
+                        labelText='Description'
+                        type='text'
+                        placeholder='e.g. Developed scalable web applications and led a team of 5 engineers.'
+                        inputName='input-pd'
+                        value={exp.description}
+                        onChange={e => setExperience(prev => prev.map((item, i) => i === idx ? { ...item, description: e.target.value } : item))}
+                      />
+                    </li>
+                  ))}
+              </ul>
+              
                 <div className="add-btn-container">
                   <AddButton buttonText="Experience" />
                 </div>
@@ -215,51 +230,57 @@ const App = () => {
             title="Projects"
             content={
               <>
-                <InputDetails
-                  labelName='label-pd'
-                  labelText='Project Name'
-                  type='text'
-                  placeholder='e.g. Portfolio Website'
-                  inputName='input-pd'
-                  value={projects.name}
-                  onChange={e => setProjects({ ...projects, name: e.target.value })}
-                />
-                <InputDetails
-                  labelName='label-pd'
-                  labelText='Description'
-                  type='text'
-                  placeholder='e.g. A personal portfolio website showcasing my work.'
-                  inputName='input-pd'
-                  value={projects.description}
-                  onChange={e => setProjects({ ...projects, description: e.target.value })}
-                />
-                <InputDetails
-                  labelName='label-pd'
-                  labelText='Tech stack'
-                  type='text'
-                  placeholder='e.g. React, Node.js, MongoDB'
-                  inputName='input-pd'
-                  value={projects.techStack}
-                  onChange={e => setProjects({ ...projects, techStack: e.target.value })}
-                />
-                <InputDetails
-                  labelName='label-pd'
-                  labelText='Source Code'
-                  type='url'
-                  placeholder='e.g. https://github.com/yourusername/yourproject'
-                  inputName='input-pd'
-                  value={projects.sourceCode}
-                  onChange={e => setProjects({ ...projects, sourceCode: e.target.value })}
-                />
-                <InputDetails
-                  labelName='label-pd'
-                  labelText='Live Demo'
-                  type='url'
-                  placeholder='e.g. https://yourusername.github.io/yourproject/'
-                  inputName='input-pd'
-                  value={projects.liveDemo}
-                  onChange={e => setProjects({ ...projects, liveDemo: e.target.value })}
-                />
+                <ul>
+                  {projects.map((proj, idx) => (
+                    <li key={idx}>
+                      <InputDetails
+                        labelName='label-pd'
+                        labelText='Project Name'
+                        type='text'
+                        placeholder='e.g. Portfolio Website'
+                        inputName='input-pd'
+                        value={proj.name}
+                        onChange={e => setProjects(prev => prev.map((item, i) => i === idx ? { ...item, name: e.target.value } : item))}
+                      />
+                      <InputDetails
+                        labelName='label-pd'
+                        labelText='Description'
+                        type='text'
+                        placeholder='e.g. A personal portfolio website showcasing my work.'
+                        inputName='input-pd'
+                        value={proj.description}
+                        onChange={e => setProjects(prev => prev.map((item, i) => i === idx ? { ...item, description: e.target.value } : item))}
+                      />
+                      <InputDetails
+                        labelName='label-pd'
+                        labelText='Tech stack'
+                        type='text'
+                        placeholder='e.g. React, Node.js, MongoDB'
+                        inputName='input-pd'
+                        value={proj.techStack}
+                        onChange={e => setProjects(prev => prev.map((item, i) => i === idx ? { ...item, techStack: e.target.value } : item))}
+                      />
+                      <InputDetails
+                        labelName='label-pd'
+                        labelText='Source Code'
+                        type='url'
+                        placeholder='e.g. https://github.com/yourusername/yourproject'
+                        inputName='input-pd'
+                        value={proj.sourceCode}
+                        onChange={e => setProjects(prev => prev.map((item, i) => i === idx ? { ...item, sourceCode: e.target.value } : item))}
+                      />
+                      <InputDetails
+                        labelName='label-pd'
+                        labelText='Live Demo'
+                        type='url'
+                        placeholder='e.g. https://yourusername.github.io/yourproject/'
+                        inputName='input-pd'
+                        value={proj.liveDemo}
+                        onChange={e => setProjects(prev => prev.map((item, i) => i === idx ? { ...item, liveDemo: e.target.value } : item))}
+                      />
+                    </li>
+                  ))}
+                </ul>
                 <div className="add-btn-container">
                   <AddButton buttonText="Project" />
                 </div>
@@ -272,24 +293,30 @@ const App = () => {
             title="Skills"
             content={
               <>
-                <InputDetails
-                  labelName='label-pd'
-                  labelText='Category'
-                  type='text'
-                  placeholder='e.g. Programming Languages, Frameworks, Tools, etc'
-                  inputName='input-pd'
-                  value={skills.category}
-                  onChange={e => setSkills({ ...skills, category: e.target.value })}
-                />
-                <InputDetails
-                  labelName='label-pd'
-                  labelText='Skill Name'
-                  type='text'
-                  placeholder='e.g. JavaScript, React, Node.js, MongoDB'
-                  inputName='input-pd'
-                  value={skills.name}
-                  onChange={e => setSkills({ ...skills, name: e.target.value })}
-                />
+                <ul>
+                  {skills.map((skill, idx) => (
+                    <li key={idx}>
+                      <InputDetails
+                        labelName='label-pd'
+                        labelText='Category'
+                        type='text'
+                        placeholder='e.g. Programming Languages, Frameworks, Tools, etc'
+                        inputName='input-pd'
+                        value={skill.category}
+                        onChange={e => setSkills(prev => prev.map((item, i) => i === idx ? { ...item, category: e.target.value } : item))}
+                      />
+                      <InputDetails
+                        labelName='label-pd'
+                        labelText='Skill Name'
+                        type='text'
+                        placeholder='e.g. JavaScript, React, Node.js, MongoDB'
+                        inputName='input-pd'
+                        value={skill.name}
+                        onChange={e => setSkills(prev => prev.map((item, i) => i === idx ? { ...item, name: e.target.value } : item))}
+                      />
+                    </li>
+                  ))}
+                </ul>
                 <div className="add-btn-container">
                   <AddButton buttonText="Skills" />
                 </div>
